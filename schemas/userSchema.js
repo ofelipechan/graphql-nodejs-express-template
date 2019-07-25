@@ -36,7 +36,7 @@ const RootQuery = new GraphQLObjectType({
         }
       },
       resolve(parent, args) {
-        return kids.find(a => a.id === parent.kid);
+        return kids.find(a => a.id === args.id);
       }
     }
   }

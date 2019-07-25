@@ -5,11 +5,11 @@ const {
   GraphQLList
 } = graphql
 const { kids } = require('../test/helpers/users');
-const { kidType } = require('./kidType');
+const kidType = require('./kidType');
 
 exports.userType = new GraphQLObjectType({
   name: 'user',
-  fields: () => ({
+  fields: ()=>({
     id: {
       type: GraphQLString
     },
@@ -20,7 +20,7 @@ exports.userType = new GraphQLObjectType({
       type: GraphQLString
     },
     kids: {
-      type: new GraphQLList(kidType),
+      type: new GraphQLList(kidType.kidType),
       resolve(parent, args) {
         console.log(parent);
         return kids.filter(a => a.fatherId == parent.id || a.motherId == parent.id);
