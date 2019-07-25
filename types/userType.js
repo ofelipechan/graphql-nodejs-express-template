@@ -4,7 +4,7 @@ const {
   GraphQLObjectType,
   GraphQLList
 } = graphql
-const { kids } = require('../test/helpers/users');
+const { kidsList } = require('../test/helpers/users');
 const kidType = require('./kidType');
 
 exports.userType = new GraphQLObjectType({
@@ -18,12 +18,11 @@ exports.userType = new GraphQLObjectType({
     },
     genre: {
       type: GraphQLString
-    },
+    }, 
     kids: {
       type: new GraphQLList(kidType.kidType),
       resolve(parent, args) {
-        console.log(parent);
-        return kids.filter(a => a.fatherId == parent.id || a.motherId == parent.id);
+        return kidsList.filter(a => a.fatherId == parent.id || a.motherId == parent.id);
       }
     }
   })

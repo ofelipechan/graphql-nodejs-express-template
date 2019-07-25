@@ -10,22 +10,22 @@ const usersList = [{
     },
     {
         id: '2',
-        name: 'Sol',
+        name: 'Julia',
         genre: 'F',
     },
     {
         id: '3',
-        name: 'Danilo',
+        name: 'Elias',
         genre: 'M',
     },
     {
         id: '4',
-        name: 'Junin',
+        name: 'Rodrigo',
         genre: 'M',
     },
 ];
 
-const kids = [{
+const kidsList = [{
         id: '1',
         name: 'marcos',
         genre: 'M',
@@ -54,5 +54,5 @@ const kids = [{
 
 module.exports = {
     usersList,
-    kids
+    kidsList
 }
