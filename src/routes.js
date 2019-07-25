@@ -1,5 +1,8 @@
 const graphqlHTTP = require('express-graphql');
-const { userSchema, profileSchema } = require('./schemas/index');
+const {
+    userSchema,
+    profileSchema
+} = require('./schemas/index');
 const express = require('express');
 const app = express();
 
@@ -12,10 +15,10 @@ const user = graphqlHTTP({
 const profile = graphqlHTTP({
     schema: profileSchema,
     rootValue: global,
-    graphiql: true  
+    graphiql: true
 })
 
-app.use(user);
-app.use(profile);
+app.use('/user', user);
+app.use('/profile', profile);
 
 module.exports = app;
