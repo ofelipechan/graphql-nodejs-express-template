@@ -4,7 +4,7 @@ const {
   GraphQLObjectType,
   GraphQLList
 } = graphql
-const { kidsList } = require('../test/helpers/users');
+const { kidsList } = require('../../test/helpers/users');
 const kidType = require('./kidType');
 
 exports.userType = new GraphQLObjectType({
@@ -27,17 +27,3 @@ exports.userType = new GraphQLObjectType({
     }
   })
 });
-
-// exports.userType = new GraphQLObjectType({
-//   name: 'user',
-//   fields: function () {
-//     return {
-//       id: {
-//         type: new GraphQLNonNull(GraphQLID)
-//       },
-//       name: {
-//         type: GraphQLString
-//       }
-//     };
-//   }  
-// }); 

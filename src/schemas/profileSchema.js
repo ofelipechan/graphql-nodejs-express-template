@@ -9,8 +9,14 @@ const {
 // const queryType = require('../queries/userQuery').queryType;
 // const mutation = require('../mutations/index');
 const _ = require('lodash');
-const { usersList, kidsList } = require('./../test/helpers/users');
-const { userType, kidType } = require('./../types/index');
+const {
+  usersList,
+  kidsList
+} = require('../../test/helpers/users');
+const {
+  userType,
+  kidType
+} = require('../types/index');
 
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
@@ -28,8 +34,8 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         return usersList.find(a => a.id === args.id);
       }
-    }
-    ,kid: {
+    },
+    kid: {
       type: kidType,
       args: {
         id: {
@@ -48,7 +54,7 @@ const RootQuery = new GraphQLObjectType({
     },
     kids: {
       type: new GraphQLList(kidType),
-      resolve(parent, args){
+      resolve(parent, args) {
         return kidsList;
       }
     }

@@ -1,9 +1,13 @@
-const GraphQLNonNull = require('graphql').GraphQLNonNull;
-const GraphQLString = require('graphql').GraphQLString;
-const UserType = require('../types/user');
+const graphql = require('graphql');
+const {
+    GraphQLString,
+    GraphQLObjectType,
+    GraphQLNonNull
+} = graphql;
+const UserType = require('../types/userType');
 // const UserModel = require('../../models/user');
 
-exports.add = {
+const add = {
     type: UserType.userType,
     args: {
         name: {
@@ -20,7 +24,7 @@ exports.add = {
     }
 };
 
-exports.remove = {
+const remove = {
     type: UserType.userType,
     args: {
         id: {
@@ -37,7 +41,7 @@ exports.remove = {
 };
 
 
-exports.update = {
+const update = {
     type: UserType.userType,
     args: {
         id: {
@@ -52,3 +56,12 @@ exports.update = {
         return {};
     }
 };
+
+module.exports = new GraphQLObjectType({
+    name: 'Mutation',
+    fields: {
+        add,
+        remove,
+        update
+    }
+});

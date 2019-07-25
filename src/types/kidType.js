@@ -6,7 +6,7 @@ const {
 } = graphql
 const {
   usersList
-} = require('./../test/helpers/users');
+} = require('../../test/helpers/users');
 const userType = require('./userType');
 
 exports.kidType = new GraphQLObjectType({
