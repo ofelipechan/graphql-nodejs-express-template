@@ -4,7 +4,7 @@ const {
   GraphQLSchema,
 } = graphql;
 const { userQuery } = require('../queries/index');
-const userMutation = require('./../mutations/userMutation');
+const { userMutation } = require('./../mutations/index');
 
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
@@ -30,15 +30,6 @@ const RootQuery = new GraphQLObjectType({
     // }
   }
 });
-
-// const mutation = new GraphQLObjectType({
-//   name: 'userMutation',
-//   fields: {
-//     addUser: {
-      
-//     }
-//   }
-// })
 
 module.exports = new GraphQLSchema({
   query: RootQuery,

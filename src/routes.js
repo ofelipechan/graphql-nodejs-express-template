@@ -16,7 +16,7 @@ const profile = graphqlHTTP({
     schema: profileSchema,
     rootValue: global,
     graphiql: true
-})
+});
 
 app.use('/user', user);
 app.use('/profile', profile);
