@@ -1,53 +1,53 @@
 const usersList = [{
         id: '1',
-        name: 'Felipe',
+        nome: 'Felipe',
         genre: 'M'
     },
     {
         id: '5',
-        name: 'Giovana',
+        nome: 'Giovana',
         genre: 'F'
     },
     {
         id: '2',
-        name: 'Julia',
+        nome: 'Julia',
         genre: 'F',
     },
     {
         id: '3',
-        name: 'Elias',
+        nome: 'Elias',
         genre: 'M',
     },
     {
         id: '4',
-        name: 'Rodrigo',
+        nome: 'Rodrigo',
         genre: 'M',
     },
 ];
 
 const kidsList = [{
         id: '1',
-        name: 'marcos',
+        nome: 'marcos',
         genre: 'M',
         motherId: '5',
         fatherId: '1'
     },
     {
         id: '2',
-        name: 'rafaela',
+        nome: 'rafaela',
         genre: 'F',
         motherId: '2',
         fatherId: '3'
     },
     {
         id: '3',
-        name: 'lucas',
+        nome: 'lucas',
         genre: 'M',
         fatherId: '1'
     },
     {
         id: '4',
-        name: 'enzo',
+        nome: 'enzo',
         genre: 'M'
     },
 ];

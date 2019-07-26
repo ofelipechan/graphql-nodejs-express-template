@@ -2,25 +2,28 @@ const graphql = require('graphql');
 const {
     GraphQLString,
     GraphQLObjectType,
-    GraphQLNonNull
+    GraphQLNonNull,
 } = graphql;
 const UserType = require('../types/userType');
-// const UserModel = require('../../models/user');
 
 const add = {
     type: UserType.userType,
     args: {
-        name: {
-            type: new GraphQLNonNull(GraphQLString),
+        nome: {
+            type: GraphQLString
+        },
+        genre: {
+            type: GraphQLString
         }
     },
-    resolve() {
-        const uModel = {};
-        const newUser = uModel.save();
-        if (!newUser) {
-            throw new Error('Error');
-        }
-        return newUser;
+    resolve(parent, args) {
+        let userModel = {
+            nome: args.nome,
+            genero: args.genre,
+        };
+
+        console.log(userModel);
+        return args;
     }
 };
 
@@ -45,10 +48,10 @@ const update = {
     type: UserType.userType,
     args: {
         id: {
-            name: 'id',
+            nome: 'id',
             type: new GraphQLNonNull(GraphQLString)
         },
-        name: {
+        nome: {
             type: new GraphQLNonNull(GraphQLString),
         }
     },

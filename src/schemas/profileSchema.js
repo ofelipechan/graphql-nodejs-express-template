@@ -6,20 +6,12 @@ const {
   GraphQLID,
   GraphQLList
 } = graphql;
-// const queryType = require('../queries/userQuery').queryType;
-// const mutation = require('../mutations/index');
-const _ = require('lodash');
 const {
-  usersList,
-  kidsList
-} = require('../../test/helpers/users');
-const {
-  userType,
-  kidType
+  userType
 } = require('../types/index');
 
 const RootQuery = new GraphQLObjectType({
-  name: 'RootQueryType',
+  name: 'ProfileQueryType',
   fields: {
     employee: {
       type: userType,
@@ -27,7 +19,7 @@ const RootQuery = new GraphQLObjectType({
         id: {
           type: GraphQLID,
         },
-        name: {
+        nome: {
           type: GraphQLString
         }
       },
@@ -35,27 +27,10 @@ const RootQuery = new GraphQLObjectType({
         return usersList.find(a => a.id === args.id);
       }
     },
-    kid: {
-      type: kidType,
-      args: {
-        id: {
-          type: GraphQLID
-        }
-      },
-      resolve(parent, args) {
-        return kids.find(a => a.id === args.id);
-      }
-    },
     employees: {
       type: new GraphQLList(userType),
       resolve(parent, args) {
         return usersList;
-      }
-    },
-    kids: {
-      type: new GraphQLList(kidType),
-      resolve(parent, args) {
-        return kidsList;
       }
     }
   }
@@ -64,11 +39,3 @@ const RootQuery = new GraphQLObjectType({
 module.exports = new GraphQLSchema({
   query: RootQuery
 });
-
-// exports.userSchema = new GraphQLSchema({
-//   query: queryType,
-//   mutation: new GraphQLObjectType({
-//     name: 'Mutation',
-//     fields: mutation
-//   })
-// });

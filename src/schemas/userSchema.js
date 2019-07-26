@@ -7,27 +7,10 @@ const { userQuery } = require('../queries/index');
 const { userMutation } = require('./../mutations/index');
 
 const RootQuery = new GraphQLObjectType({
-  name: 'RootQueryType',
+  name: 'UserQuery',
   fields: {
     user: userQuery.getUser,
     users: userQuery.getUsers,
-    // kid: {
-    //   type: kidType,
-    //   args: {
-    //     id: {
-    //       type: GraphQLID
-    //     }
-    //   },
-    //   resolve(parent, args) {
-    //     return kids.find(a => a.id === args.id);
-    //   }
-    // },
-    // kids: {
-    //   type: new GraphQLList(kidType),
-    //   resolve(parent, args) {
-    //     return kidsList;
-    //   }
-    // }
   }
 });
 
