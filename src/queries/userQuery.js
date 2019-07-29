@@ -28,13 +28,10 @@ const getUser = {
         },
         documentoProprietario: {
             type: GraphQLString
-        },
-        // perfis: {
-        //     type: new GraphQLList(profileType)
-        // }
+        }
     },
     resolve(parent, args) {
-        return usersMockList.find(a => a.id === args.id);
+        return usersMock.usersMockList.find(a => a.id === args.id);
     }
 };
 

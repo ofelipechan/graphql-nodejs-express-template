@@ -2,9 +2,23 @@ const graphql = require('graphql');
 const {
   GraphQLString,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLList,
-  GraphQLBoolean
+  GraphQLBoolean,
+  GraphQLID
 } = graphql
+
+exports.addPerfilType = new GraphQLInputObjectType({
+  name: 'addPerfilType',
+  fields: () => ({
+    id: {
+      type: GraphQLID
+    },
+    nome: {
+      type: GraphQLString
+    }
+  })
+});
 
 exports.profileType = new GraphQLObjectType({
   name: 'perfil',
