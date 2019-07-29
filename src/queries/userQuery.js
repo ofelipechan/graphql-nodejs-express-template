@@ -6,10 +6,7 @@ const {
     GraphQLNonNull
 } = graphql;
 const userType = require('../types/userType').userType;
-const profileType = require('../types/profileType').profileType;
-const {
-    usersList
-} = require('../../test/helpers/users');
+const usersMock = require('../../test/helpers/usersMock');
 
 const getUser = {
     type: userType,
@@ -35,21 +32,20 @@ const getUser = {
         // perfis: {
         //     type: new GraphQLList(profileType)
         // }
-
     },
     resolve(parent, args) {
-        return usersList.find(a => a.id === args.id);
+        return usersMockList.find(a => a.id === args.id);
     }
 };
 
-const getUsers = {
+const allUsers = {
     type: new GraphQLList(userType),
     resolve(parent, args) {
-        return usersList;
+        return usersMock.usersMockList;
     }
 };
 
 module.exports = {
     getUser,
-    getUsers
+    allUsers
 };

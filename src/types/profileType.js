@@ -7,7 +7,7 @@ const {
 } = graphql
 
 exports.profileType = new GraphQLObjectType({
-  name: 'profile',
+  name: 'perfil',
   fields: () => ({
     id: {
       type: GraphQLString
@@ -16,10 +16,7 @@ exports.profileType = new GraphQLObjectType({
       type: GraphQLString
     },
     permissoes: {
-      type: new GraphQLList(permissao),
-      resolve(parent, args) {
-        return null;
-      }
+      type: new GraphQLList(permissao)
     }
   })
 });
@@ -48,7 +45,10 @@ const permissao = new GraphQLObjectType({
 const recursoType = new GraphQLObjectType({
   name: 'recurso',
   fields: () => ({
-    recurso: {
+    nome: {
+      type: GraphQLString
+    },
+    frn: {
       type: GraphQLString
     }
   })

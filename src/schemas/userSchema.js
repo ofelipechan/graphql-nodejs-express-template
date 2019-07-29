@@ -10,7 +10,7 @@ const RootQuery = new GraphQLObjectType({
   name: 'UserQuery',
   fields: {
     user: userQuery.getUser,
-    users: userQuery.getUsers,
+    allUsers: userQuery.allUsers,
   }
 });
 

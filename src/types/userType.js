@@ -32,14 +32,5 @@ exports.userType = new GraphQLObjectType({
     perfis: {
       type: new GraphQLList(profileType)
     }
-    // perfis: {
-    //   type: new GraphQLList()
-    // }
-    // kids: {
-    //   type: new GraphQLList(kidType.kidType),
-    //   resolve(parent, args) {
-    //     return kidsList.filter(a => a.fatherId == parent.id || a.motherId == parent.id);
-    //   }
-    // }
   })
 });
