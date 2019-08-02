@@ -1,8 +1,9 @@
 module.exports = {
     "env": {
-        "browser": true,
+        "node": true,
         "commonjs": true,
-        "es6": true
+        "es6": true,
+        "mocha": true
     },
     "extends": "eslint:recommended",
     "globals": {
@@ -15,6 +16,6 @@ module.exports = {
     "rules": {
         "semi": ["error", "always"],
         "quotes": ["error", "single"],
-        "skipBlankLines": true
+        "no-trailing-spaces": ["error", { "skipBlankLines": true }]
     }
 };

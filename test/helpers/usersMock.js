@@ -2,7 +2,7 @@ const faker = require('faker');
 const perfis = require('./perfisMock');
 
 const generateListData = () => {
-    let data = [];    
+    let data = [];
     for (let i = 0; i < 3; i++) {
         const email = faker.internet.email();
         data.push({
@@ -16,7 +16,7 @@ const generateListData = () => {
         });
     }
     return data;
-}
+};
 
 
 exports.singleMockUser = {

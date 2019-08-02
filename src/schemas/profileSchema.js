@@ -23,14 +23,15 @@ const RootQuery = new GraphQLObjectType({
           type: GraphQLString
         }
       },
-      resolve(parent, args) {
-        return usersList.find(a => a.id === args.id);
+      resolve() {
+        return null;
+        // return usersList.find(a => a.id === args.id);
       }
     },
     employees: {
       type: new GraphQLList(userType),
-      resolve(parent, args) {
-        return usersList;
+      resolve() {
+        return null;
       }
     }
   }

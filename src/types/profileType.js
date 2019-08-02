@@ -6,7 +6,7 @@ const {
   GraphQLList,
   GraphQLBoolean,
   GraphQLID
-} = graphql
+} = graphql;
 
 exports.addPerfilType = new GraphQLInputObjectType({
   name: 'addPerfilType',

@@ -3,47 +3,13 @@ const {
     GraphQLString,
     GraphQLObjectType,
     GraphQLNonNull,
-    GraphQLList,
 } = graphql;
 const UserType = require('../types/userType');
-const PerfilType = require('../types/profileType');
 
 const add = {
     type: UserType.userType,
-    args: {
-        nome: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        dataNascimento: {
-            type: GraphQLString
-        },
-        emailPrimario: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        usuario: {
-            type: GraphQLString
-        },
-        senha: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        documento: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        documentoProprietario: {
-            type: GraphQLString
-        },
-        perfis: {
-            type: new GraphQLList(PerfilType.addPerfilType)
-        }
-    },
-    resolve(parent, args) {
-        let userModel = {
-            nome: args.nome,
-            emailr: args.email,
-        };
-
-        console.log(args);
-        // console.log(userModel);
+    args: UserType.userInputType,
+    resolve() {
         return { id: '1234'};
     }
 };

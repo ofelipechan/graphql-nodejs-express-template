@@ -10,7 +10,7 @@ const generateListData = () => {
         });
     }
     return data;
-}
+};
 
 const generateRecursosList = () => {
     let data = [];
@@ -27,7 +27,7 @@ const generateRecursosList = () => {
         });
     }
     return data;
-}
+};
 
 exports.perfilMockList = generateListData();
 exports.singlePerfilMock = [{

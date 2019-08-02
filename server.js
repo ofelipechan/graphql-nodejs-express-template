@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(helmet());
 app.use(routes);
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`A GraphQL API running at port ${port}`);
 });
